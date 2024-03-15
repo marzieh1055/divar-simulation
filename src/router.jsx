@@ -13,6 +13,16 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/",
+    element: <MainLayout />,
+    children: [
+      {
+        path: "new",
+        element: <NewPage />,
+      },
+    ],
+  },
 ]);
 
 export default router;

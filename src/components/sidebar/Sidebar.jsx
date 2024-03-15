@@ -34,9 +34,8 @@ function Sidebar() {
       <ul className=" text-neutral-500 mt-2">
         {loading && <DefaultSkeleton />}
         {response?.data?.categorys?.map((category, index) => (
-          <li>
+          <li key={index}>
             <Link
-              key={index}
               to={`/categorys/${category.slug}`}
               className=" p-2 flex gap-2 items-center hover:text-neutral-800 transition"
             >

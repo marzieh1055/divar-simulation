@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import UserRegester from "../auth/UserRegester";
 
 function Header() {
   return (
@@ -18,7 +19,7 @@ function Header() {
               </li>
             ) : ( */}
           <li className=" p-2 rounded-md text-neutral-500">
-            <Link href={`/auth/otp`}>ورود</Link>
+            <UserRegester />
           </li>
           {/* )} */}
           <li className=" p-2 bg-red-800 rounded-md text-white">ثبت آگهی</li>
