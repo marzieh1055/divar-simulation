@@ -1,6 +1,11 @@
-function AdvertisingCard({ title, price, address, image }) {
+import { Link } from "react-router-dom";
+
+function AdvertisingCard({ id, title, price, address, image }) {
   return (
-    <div className=" flex justify-between rounded-md p-4 border border-neutral-300 max-sm:flex-col-reverse max-sm:items-center">
+    <Link
+      to={`/posts/${id}`}
+      className=" flex justify-between rounded-md p-4 border border-neutral-300 max-sm:flex-col-reverse max-sm:items-center"
+    >
       <div className=" h-full max-sm:text-center max-sm:p-2 max-sm:h-fit">
         <h1 className=" h-2/3 break-words max-sm:h-fit">{title}</h1>
         <div className=" text-neutral-400">
@@ -29,7 +34,7 @@ function AdvertisingCard({ title, price, address, image }) {
           />
         )}
       </div>
-    </div>
+    </Link>
   );
 }
 
