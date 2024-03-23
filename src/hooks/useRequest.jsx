@@ -18,8 +18,8 @@ function useRequest(url, method, headers) {
     };
     httpService[method.toLowerCase()](
       url,
-      method.toLowerCase() === "post" ? payload : configs,
-      !(method.toLowerCase() === "post") && configs
+      method.toLowerCase() === "post" && payload,
+      configs
     )
       .then((res) => {
         setResponse(res?.data);

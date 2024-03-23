@@ -13,16 +13,12 @@ function Header() {
 
       <nav>
         <ul className=" flex gap-4">
-          {/* {myName?.name ? (
-              <li className=" p-2 rounded-md text-neutral-500">
-                کاربر :{` ${myName?.name}`}
-              </li>
-            ) : ( */}
           <li className=" p-2 rounded-md text-neutral-500">
             <UserRegester />
           </li>
-          {/* )} */}
-          <li className=" p-2 bg-red-800 rounded-md text-white">ثبت آگهی</li>
+          <li className=" p-2 bg-red-800 rounded-md text-white">
+            <Link to={"/create-post"}>ثبت آگهی</Link>
+          </li>
         </ul>
       </nav>
     </header>

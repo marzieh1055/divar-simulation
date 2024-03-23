@@ -3,6 +3,10 @@ import MainLayout from "./layout/MainLayout";
 import NewPage from "./pages/new";
 import CategorysPage from "./pages/categorys";
 import PostPage from "./pages/post";
+import MyPostsPage from "./pages/my-posts";
+import AuthProvider from "./providers/AuthProvider";
+import CreatePostPage from "./pages/create-post";
+import OrdersPage from "./pages/orders";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +24,30 @@ const router = createBrowserRouter([
       {
         path: "posts/:id",
         element: <PostPage />,
+      },
+      {
+        path: "my-posts",
+        element: (
+          <AuthProvider>
+            <MyPostsPage />
+          </AuthProvider>
+        ),
+      },
+      {
+        path: "create-post",
+        element: (
+          <AuthProvider>
+            <CreatePostPage />
+          </AuthProvider>
+        ),
+      },
+      {
+        path: "orders",
+        element: (
+          <AuthProvider>
+            <OrdersPage />
+          </AuthProvider>
+        ),
       },
     ],
   },

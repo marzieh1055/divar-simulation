@@ -8,8 +8,10 @@ import { RiCarLine } from "react-icons/ri";
 
 import useRequest from "../../hooks/useRequest";
 import DefaultSkeleton from "../skeleton/DefaultSkeleton";
+import useAuth from "../../hooks/useAuth";
 
 function Sidebar() {
+  const userData = useAuth();
   // icons
   const icons = {
     car: <RiCarLine />,
@@ -45,6 +47,20 @@ function Sidebar() {
           </li>
         ))}
       </ul>
+      <hr />
+      {userData && (
+        <ul className=" text-neutral-500 mt-2">
+          <li>
+            <Link
+              to={`/my-posts`}
+              className=" p-2 flex gap-2 items-center hover:text-neutral-800 transition"
+            >
+              {icons["default"]}
+              {"آگهی های من"}
+            </Link>
+          </li>
+        </ul>
+      )}
     </>
   );
 }
