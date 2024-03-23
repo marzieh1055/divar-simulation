@@ -59,6 +59,24 @@ function Sidebar() {
               {"آگهی های من"}
             </Link>
           </li>
+          <li>
+            <Link
+              to={`/my-orders`}
+              className=" p-2 flex gap-2 items-center hover:text-neutral-800 transition"
+            >
+              {icons["default"]}
+              {"سفارش های من"}
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={`/orders`}
+              className=" p-2 flex gap-2 items-center hover:text-neutral-800 transition"
+            >
+              {icons["default"]}
+              {"سفارش ها"}
+            </Link>
+          </li>
         </ul>
       )}
     </>

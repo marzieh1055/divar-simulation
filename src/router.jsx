@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 import NewPage from "./pages/new";
 import CategorysPage from "./pages/categorys";
@@ -42,12 +42,29 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "my-orders",
+        element: (
+          <AuthProvider>
+            <OrdersPage />
+          </AuthProvider>
+        ),
+      },
+      {
         path: "orders",
         element: (
           <AuthProvider>
             <OrdersPage />
           </AuthProvider>
         ),
+      },
+      // redirects
+      {
+        path: "*",
+        element: <Navigate to={"/"} />,
+      },
+      {
+        path: "",
+        element: <Navigate to={"/new"} />,
       },
     ],
   },
